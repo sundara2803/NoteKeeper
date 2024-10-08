@@ -27,7 +27,9 @@ export default function App() {
 
   const handleDelete = (index) => {
     if(isEditing) return alert("Not allowed while editing!")
-    setNotes(notes.filter((_, i) => i !== index));
+      if(confirm("Do you want to delete this note?")){
+        setNotes(notes.filter((_, i) => i !== index));
+      }
   };
 
   const handlePin = (index) => {
